@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 
+import{users,adminName} from './data';
+import ListOfUsers from './Components/ListOfUsers';
+
+
 function App() {
+  const handleAlert=(user)=>{
+    alert(user.name)
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ListOfUsers 
+      users={users} 
+      adminName={adminName}
+      handleAlert={handleAlert}>
+      
+<img src="/coca.png" width={190} height={80}/>
+      <img src="/orange.png" width={180} height={100}/>
+      <img src="/total.png" width={200} height={100}/>
+</ListOfUsers>
+      
+      
     </div>
   );
 }
